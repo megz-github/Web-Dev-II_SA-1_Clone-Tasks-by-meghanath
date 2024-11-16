@@ -1,0 +1,351 @@
+/* General */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}/*Remove default margin and padding from all elements,
+ensures padding and borders are included in element's total width/height*/
+
+body {
+    font-family: 'Lato', sans-serif;
+    color: #FFFFFF;
+    background-color: #FFFFFF;
+}/* Set a clean, sans-serif font for body text, 
+body text color to white for contrast, body background color to white */
+
+/* Header */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    background-color: #070415;
+    color: #FFFFFF;
+    flex-wrap: wrap;
+}/* Use flexbox for horizontal layout, Center items vertically, 
+Space items evenly between edges, padding around header, 
+Set dark background color, Set header text color to white, 
+Allow items to wrap to next line if needed */
+
+header h1 {
+    font-family: 'Teko', sans-serif;
+    font-size: 2em;
+}/* unique font for header title, Increase font size of title */
+
+header nav a {
+    margin: 0 15px;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 1em;
+}/* Space out navigation links, link color to white, 
+Remove underline from links, Set standard font size for links */
+
+.search-bar {
+    padding: 5px;
+    font-size: 1em;
+    background-color: #FFFFFF;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 120px;
+    height: 50px;
+    color: black;
+    text-align: center;
+    
+}/* Add padding inside search bar, background color to white, Change cursor to pointer on hover, 
+rounded corners, fixed height and width for search bar, text color to black, 
+Center text within search bar */
+
+/* Main Content */
+.content {
+    padding: 48px;
+    max-width: 900px;
+    margin: auto;
+}/* Add padding around content, Limit maximum width for readability, Center content on the page */
+
+/* Movie Grid */
+.movie-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: 32px;
+}/*flexbox for movie layout, Space movies out horizontally, space between movie items, top margin above movie grid */
+
+.movie {
+    width: 48%;
+    background-color: #070415;
+    padding: 16px;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}/* Set movie card width to almost half, Use flex layout, Stack content vertically, Center content horizontally */
+
+.movie .movie-poster {
+    width: 100%;
+    height: auto;
+    margin-bottom: 16px;
+}/* Set poster width to full,  Maintain aspect ratio and space */
+
+.movie .movie-details p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    margin-bottom: 16px;
+}/* Increase font size, Set line height for spacing and space */
+
+.movie .movie-details button {
+    padding: 15px 100px;
+    font-size: 1.2em;
+    background-color: #231651;
+    color: #FFFFFF;
+    border: none;
+    cursor: pointer;
+    border-radius: 2px;
+    width: 100%;
+}/* Set padding for button, Increase font size, Show pointer cursor on hover, width to full */
+
+/* Single Movie Layout */
+.single-movie {
+    display: flex;
+    background-color: #070415;
+    padding: 16px;
+    margin-top: 32px;
+    border-radius: 2px;
+    gap: 16px;
+}/* Use flex layout for side-by-side display, Space between poster and details, Add top margin and padding */
+
+.single-movie .movie-poster {
+    width: 50%;
+    height: auto;
+}/* width to half, Maintain aspect ratio */
+
+.single-movie .movie-details {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}/* width to half, flex layout, Stack vertically, Space items vertically */
+
+.single-movie .movie-details p {
+    font-size: 1.1em;
+    line-height: 1.8;
+}/* Increase font size, Set line height, Set line height */
+
+.single-movie .movie-details button {
+    padding: 15px 60px;
+    font-size: 1.2em;
+    background-color: #231651;
+    color: #FFFFFF;
+    border: none;
+    cursor: pointer;
+    border-radius: 2px;
+}/* Set button padding and background color, Increase font size, Set background and text color,
+ Show pointer cursor */
+
+/* Responsive Design */
+
+/* Mobile (360px-720px) */
+@media (min-width: 360px) and (max-width: 720px) {
+    body {
+        margin-inline: auto;
+    } /* Center body content */
+    
+    header {
+        padding: 16px;
+    } /* Adjust header padding */
+
+    header h1 {
+        font-size: 2em;
+    } /* Adjust title font size */
+
+    .content {
+        padding: 16px;
+    } /* Adjust content padding */
+
+    .featured-movie{
+        display: flex;
+        background-color: #070415;
+        padding: 16px;
+        margin-top: 32px;
+        border-radius: 8px;
+        gap: 16px;    
+    } /*flex layout for featured movie, padding around content, gap between items */
+
+    .featured-movie .movie-details {
+        flex-direction: column;
+        width: 150%;
+        display: flex;
+        justify-content: space-between;
+    } /* Stack details vertically, flex layout, Space items vertically */
+    .featured-movie .movie-poster{
+        width: 100%;
+        height: auto;
+    } 
+    .featured-movie .movie-details button {
+        padding: 4px 130px;
+        font-size: 1.3em;
+        background-color: #231651;
+        color: #FFFFFF;
+        border: none;
+        cursor: pointer;
+        border-radius: 4px;
+        margin: 2%;
+        
+        /* Centering the text */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    .featured-movie .movie-details p{
+        font-size: 1.1em;
+        line-height: 1.8;
+        text-align: left;
+        margin-right: auto;    
+    }
+
+
+
+    .movie-grid {
+        flex-direction: column;
+    } /* Stack movies vertically */
+    .movie ,
+    .movie .movie-poster{
+        width: 100%;
+    } /* Set full width for movie cards */
+    .movie .movie-details button {
+        padding: 15px 80px;
+        font-size: 1.2em;
+        background-color: #231651;
+        color: #FFFFFF;
+        border: none;
+        cursor: pointer;
+        border-radius: 4px;
+    } 
+
+
+    .single-movie {
+        flex-direction: column;
+    } /* Stack single movie vertically */
+
+    .single-movie .movie-poster,
+    .single-movie .movie-details {
+        width: 100%;
+    }
+        /* Hide the navigation links */
+        header nav {
+            display: none;
+        }
+    
+        /* Align "watch.it" and search bar on opposite sides */
+        header {
+            justify-content: space-between;
+        }
+    
+}
+
+
+
+
+
+
+
+
+
+/* Tablet (720px-1024px) */
+@media (min-width: 720px) and (max-width: 1024px) {
+    /* Tablet header styling */
+    .movie-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    .movie {
+        width: 300px;
+        margin-inline: auto;
+    }
+
+    .movie-details p {
+        min-height: 316px;
+    }
+}
+
+
+
+
+
+
+
+
+/* Desktop (1024px and up) */
+@media (min-width: 1025px) {
+    header {
+        padding: 16px 48px;
+    } /* Center body content */
+
+    header h1 {
+        font-size: 3em;
+    } /* Adjust header padding */
+
+    .content {
+        padding: 48px;
+    }
+    /* Adjust padding */
+
+    .movie-grid {
+        display: inline-block;
+    } /* Use inline-block layout for movie grid */
+
+    .movie {
+        display: inline-block;
+        margin-bottom: 16px;
+    } /* Use inline-block layout for movies, bottom margin for spacing */
+
+    .movie:nth-child(2) {
+        margin-right: 25px;
+    }
+
+    .featured {
+        width: 100%;
+        display: block;
+        margin-bottom: 16px;
+    } /*full width for featured section, display to block, bottom margin */
+
+    .featured .movie-poster {
+        display: block;
+        width: 100%;
+        height: 350px;
+        object-fit: cover;
+    } 
+    
+    .featured .movie-details {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .featured .movie-details button {
+        height: 100px;
+    }
+
+    .movie:nth-child(n + 4) {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 16px;
+        gap: 16px;
+    } /* Set full width for movies, flex layout, gap between items */
+
+    .movie:nth-child(n + 4) .movie-poster {
+        width: 50%;
+        height: 300px;
+    }
+
+    .movie:nth-child(n + 4) .movie-details button {
+        width: 100%;
+        margin-top: 70px;
+        
+    }
+
+}
